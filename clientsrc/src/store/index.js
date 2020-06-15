@@ -6,7 +6,7 @@ import router from "../router";
 Vue.use(Vuex);
 
 let baseUrl = location.host.includes("localhost")
-  ? "https://localhost:5001/"
+  ? "https://localhost:3000/"
   : "/";
 
 let api = Axios.create({
