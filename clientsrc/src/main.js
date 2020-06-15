@@ -2,7 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import { Auth0Plugin } from "@bcwdev/auth0-vue";
+import { Auth0Plugin, onAuth } from "@bcwdev/auth0-vue";
 import { domain, clientId, audience } from "./authConfig";
 
 Vue.use(Auth0Plugin, {
@@ -21,7 +21,7 @@ Vue.use(Auth0Plugin, {
 new Vue({
   router,
   store,
-  render: function (h) {
+  render: function(h) {
     return h(App);
   }
 }).$mount("#app");

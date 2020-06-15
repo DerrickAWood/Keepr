@@ -1,8 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <router-link class="navbar-brand" :to="{ name: 'home' }"
-      >Kanban</router-link
-    >
+    <router-link class="navbar-brand" :to="{ name: 'home' }">Keepr</router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,18 +14,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item" :class="{ active: $route.name == 'home' }">
+        <!-- <li class="nav-item" :class="{ active: $route.name == 'home' }">
           <router-link :to="{ name: 'home' }" class="nav-link"
+            >Home</router-link
+          >
+        </li> -->
+        <!-- this went in list item below -->
+        <!-- v-if="$auth.isAuthenticated"
+          :class="{ active: $route.name == 'dashboard' }" -->
+        <li
+          class="nav-item"
+        >
+          <router-link class="nav-link" :to="{ name: 'dashboard' }"
             >Home</router-link
           >
         </li>
         <li
           class="nav-item"
-          v-if="$auth.isAuthenticated"
-          :class="{ active: $route.name == 'boards' }"
         >
-          <router-link class="nav-link" :to="{ name: 'boards' }"
-            >My-Dashboard</router-link
+          <router-link v-show="$auth.isAuthenticated" class="nav-link" :to="{ name: 'vault' }"
+            >Vault</router-link
           >
         </li>
       </ul>
@@ -49,7 +55,7 @@
 import axios from "axios";
 
 let _api = axios.create({
-  baseURL: "https://localhost:3000",
+  baseURL: "https://localhost:5001",
   withCredentials: true
 });
 export default {
@@ -58,12 +64,12 @@ export default {
     async login() {
       await this.$auth.loginWithPopup();
       this.$store.dispatch("setBearer", this.$auth.bearer);
-      this.$store.dispatch("getProfile");
       console.log("this.$auth.user: ");
       console.log(this.$auth.user);
     },
     async logout() {
-      await this.$auth.logout({returnTo: window.location.origin});
+      this.$store.dispatch("resetBearer");
+      await this.$auth.logout({ returnTo: window.location.origin });
     }
   }
 };

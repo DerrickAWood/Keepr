@@ -1,22 +1,21 @@
 <template>
   <div class="home">
-    <h1>This is your home page.</h1>
+    <h1>Welcome Home</h1>
   </div>
 </template>
-
 
 <script>
 export default {
   name: "home",
-  data() {
-    return {};
+  computed: {
+    user() {
+      return this.$store.state.user;
+    }
   },
-  computed: {},
-  methods: {},
-  components: {}
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
+    }
+  }
 };
 </script>
-
-
-<style scoped>
-</style>
