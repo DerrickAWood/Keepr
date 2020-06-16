@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 let ObjectId = Schema.Types.ObjectId;
 
 const Keep = new Schema({
-  title: { type: String, required: true },
+  Name: { type: String, required: true },
+  Description: { type: String, required: true },
+  Img: { type: String, required: true },
   creatorEmail: { type: String, required: true }
 });
 
