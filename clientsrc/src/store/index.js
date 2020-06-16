@@ -6,7 +6,7 @@ import router from "../router";
 Vue.use(Vuex);
 
 let baseUrl = location.host.includes("localhost")
-  ? "https://localhost:3000/"
+  ? "http://localhost:3000/"
   : "/";
 
 let api = Axios.create({
@@ -41,6 +41,7 @@ export default new Vuex.Store({
     },
     async getKeeps({commit,dispatch}){
       try {
+        debugger
         let res = await api.get("keeps");
         commit("setKeeps", res.data)
       } catch (error) {
