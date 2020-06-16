@@ -4,6 +4,7 @@ let ObjectId = Schema.Types.ObjectId;
 
 const Keep = new Schema({
   title: { type: String, required: true },
+  creatorEmail: { type: String, required: true }
 });
 
 

@@ -16,7 +16,7 @@ export class KeepsController extends BaseController {
       .get('', this.getAll)
       // .get('/:id', this.getById)
       // .get('/:id/task', this.getTaskByListId)
-      // .post('', this.create)
+       .post('', this.create)
       // .put('/:id', this.edit)
       // .delete('/:id', this.delete)
   }
@@ -39,15 +39,15 @@ export class KeepsController extends BaseController {
   //   }
   // }
 
-  // async create(req, res, next) {
-  //   try {
-  //     req.body.creatorEmail = req.userInfo.email
-  //     let data = await keepsService.create(req.body)
-  //     return res.status(201).send(data)
-  //   } catch (error) {
-  //     next(error)
-  //   }
-  // }
+  async create(req, res, next) {
+    try {
+      req.body.creatorEmail = req.userInfo.email
+      let data = await keepsService.create(req.body)
+      return res.status(201).send(data)
+    } catch (error) {
+      next(error)
+    }
+  }
 
   // async edit(req, res, next) {
   //   try {
