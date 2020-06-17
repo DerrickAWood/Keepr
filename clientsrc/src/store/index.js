@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import Axios from "axios";
-import router from "../router";
+import router from "../router/index";
 
 Vue.use(Vuex);
 
@@ -10,7 +10,7 @@ let baseUrl = location.host.includes("localhost")
   : "/";
 
 let api = Axios.create({
-  baseURL: baseUrl + "api/",
+  baseURL: baseUrl + "api",
   timeout: 3000,
   withCredentials: true
 });

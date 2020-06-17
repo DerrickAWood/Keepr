@@ -56,7 +56,7 @@ import axios from "axios";
 import { getUserData } from "@bcwdev/auth0-vue";
 
 let _api = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "http://localhost:3000",
   // withCredentials: true
 });
 export default {
