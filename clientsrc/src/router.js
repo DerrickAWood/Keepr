@@ -1,33 +1,37 @@
-import Vue from "vue";
-import Router from "vue-router";
-// @ts-ignore
-import Home from "./views/Home.vue";
-// @ts-ignore
-import  Vault from "./components/Vault.vue"
-// @ts-ignore
-import Dashboard from "./views/Dashboard.vue";
-import { authGuard } from "@bcwdev/auth0-vue";
+// import Vue from 'vue'
+// import Router from 'vue-router'
+// // import Home from '../views/Home.vue'
+// // import Boards from '../views/Boards.vue'
+// // import Board from '../views/Board.vue'
+// import Dashboard from './views/Dashboard.vue'
+// import Vault from '../components/Vault.vue'
+// import { authGuard } from "@bcwdev/auth0-vue"
 
-Vue.use(Router);
+// Vue.use(Router)
 
-export default new Router({
-  routes: [
-    // {
-    //   path: "/",
-    //   name: "home",
-    //   component: Home
-    // },
-    {
-      path: "/",
-      name: "dashboard",
-      component: Dashboard,
-      // beforeEnter: authGuard
-    },
-    {
-      path: "/vault",
-      name: "vault",
-      component: Vault,
-       beforeEnter: authGuard
-    }
-  ]
-});
+// export default new Router({
+//   routes: [
+//     {
+//       path: "/",
+//       name: "dashboard",
+//       component: Dashboard,
+//       // beforeEnter: authGuard
+//     },
+//     // {
+//     //   path: '/keeps',
+//     //   name: 'boards',
+//     //   component: Boards,
+//     //   beforeEnter: authGuard
+//     // },
+//     {
+//       path: "/vault",
+//       name: "vault",
+//       component: Vault,
+//        beforeEnter: authGuard
+//     },
+//     {
+//       path: "*",
+//       redirect: '/'
+//     }
+//   ]
+// })

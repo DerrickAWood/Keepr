@@ -53,10 +53,11 @@
 
 <script>
 import axios from "axios";
+import { getUserData } from "@bcwdev/auth0-vue";
 
 let _api = axios.create({
-  baseURL: "https://localhost:5001",
-  withCredentials: true
+  baseURL: "http://localhost:3000/",
+  // withCredentials: true
 });
 export default {
   name: "Navbar",
