@@ -12,7 +12,7 @@ let baseUrl = location.host.includes("localhost")
 let api = Axios.create({
   baseURL: baseUrl + "api/",
   timeout: 3000,
-  withCredentials: true
+  // withCredentials: true
 });
 
 export default new Vuex.Store({
@@ -41,7 +41,6 @@ export default new Vuex.Store({
     },
     async getKeeps({commit,dispatch}){
       try {
-        debugger
         let res = await api.get("keeps");
         commit("setKeeps", res.data)
       } catch (error) {
