@@ -11,7 +11,7 @@
           name="name"
           class="form-control"
           placeholder="Enter name...."
-          v-model="newKeep.name"
+          v-model="newKeep.Name"
         />
       </div>
       <div class="form-group">
@@ -21,7 +21,7 @@
           name="img"
           class="form-control"
           placeholder="Enter imgUrl...."
-          v-model="newKeep.img"
+          v-model="newKeep.Img"
         />
       </div>
       <div class="form-group">
@@ -31,7 +31,7 @@
           name="description"
           class="form-control"
           placeholder="Enter description...."
-          v-model="newKeep.description"
+          v-model="newKeep.Description"
         />
       </div>
       <button type="submit" class="btn btn-primary btn-lg">SUBMIT</button>
