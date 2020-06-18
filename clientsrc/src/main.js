@@ -1,6 +1,6 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "./router";
+import router from "./router/index";
 import store from "./store";
 import { Auth0Plugin, onAuth } from "@bcwdev/auth0-vue";
 import { domain, clientId, audience } from "./authConfig";
