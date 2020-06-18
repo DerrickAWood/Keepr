@@ -14,11 +14,11 @@ export class KeepsController extends BaseController {
     this.router
       .use(auth0provider.getAuthorizedUserInfo)
       .get('', this.getAll)
-      // .get('/:id', this.getById)
+       .get('/:id', this.getById)
       // .get('/:id/task', this.getTaskByListId)
        .post('', this.create)
       // .put('/:id', this.edit)
-      // .delete('/:id', this.delete)
+       .delete('/:id', this.delete)
   }
 
 
@@ -30,14 +30,14 @@ export class KeepsController extends BaseController {
       next(err)
     }
   }
-  // async getById(req, res, next) {
-  //   try {
-  //     let data = await keepsService.getById(req.params.id, req.userInfo.email)
-  //     return res.send(data)
-  //   } catch (error) {
-  //     next(error)
-  //   }
-  // }
+  async getById(req, res, next) {
+    try {
+      let data = await keepsService.getById(req.params.id, req.userInfo.email)
+      return res.send(data)
+    } catch (error) {
+      next(error)
+    }
+  }
 
   async create(req, res, next) {
     try {
@@ -58,12 +58,12 @@ export class KeepsController extends BaseController {
   //   }
   // }
 
-  // async delete(req, res, next) {
-  //   try {
-  //     await donationsService.delete(req.params.id, req.userInfo.email)
-  //     return res.send("Successfully deleted")
-  //   } catch (error) {
-  //     next(error)
-  //   }
-  // }
+  async delete(req, res, next) {
+    try {
+      await keepsService.delete(req.params.id, req.userInfo.email)
+      return res.send("Successfully deleted")
+    } catch (error) {
+      next(error)
+    }
+  }
 }

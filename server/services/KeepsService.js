@@ -12,16 +12,16 @@ class KeepsService {
     // .populate("organization", "name")
   }
 
-  // async getById(id, userEmail) {
-  //   let data = await dbContext.Donations.findOne({
-  //     _id: id,
-  //     creatorEmail: userEmail
-  //   })
-  //   if (!data) {
-  //     throw new BadRequest("Invalid ID or you do not own this donation")
-  //   }
-  //   return data
-  // }
+  async getById(id, userEmail) {
+    let data = await dbContext.Keeps.findOne({
+      _id: id,
+      creatorEmail: userEmail
+    })
+    if (!data) {
+      throw new BadRequest("Invalid ID or you do not own this donation")
+    }
+    return data
+  }
 
   async create(rawData) {
     let data = await dbContext.Keeps.create(rawData)
@@ -41,15 +41,15 @@ class KeepsService {
   //   return data;
   // }
 
-  // async delete(id, userEmail) {
-  //   let data = await dbContext.Donations.findOneAndRemove({
-  //     _id: id,
-  //     creatorEmail: userEmail
-  //   });
-  //   if (!data) {
-  //     throw new BadRequest("Invalid ID or you do not own this donation");
-  //   }
-  // }
+  async delete(id, userEmail) {
+    let data = await dbContext.Keeps.findOneAndRemove({
+      _id: id,
+      creatorEmail: userEmail
+    });
+    if (!data) {
+      throw new BadRequest("Invalid ID or you do not own this donation");
+    }
+  }
 
 }
 

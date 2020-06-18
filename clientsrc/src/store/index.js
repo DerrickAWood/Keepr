@@ -85,6 +85,7 @@ export default new Vuex.Store({
 
     async deleteKeep({commit,dispatch}, keepId){
       try {
+        debugger
         await api.delete("keeps/"+ keepId)
         dispatch("getKeeps")
       } catch (error) {

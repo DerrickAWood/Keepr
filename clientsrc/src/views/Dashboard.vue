@@ -43,7 +43,7 @@
         <h1>{{keep.Description}}</h1>
         <img :src="keep.Img" class="img-fluid" alt />
         <div class="row m-2">
-        <button @click="deleteKeep(keep.id)" class="btn btn-danger m-2">Delete</button>
+        <button @click="deleteKeep(keep._id)" class="btn btn-danger m-2">Delete</button>
         <div class="dropdown m-2">
             <button
               class="btn btn-secondary dropdown-toggle"
