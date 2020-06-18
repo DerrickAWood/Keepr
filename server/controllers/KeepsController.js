@@ -24,7 +24,7 @@ export class KeepsController extends BaseController {
 
   async getAll(req, res, next) {
     try {
-      let data = await keepsService.getAll(req.userInfo.email)
+      let data = await keepsService.getAll()
       return res.send(data)
     } catch (err) {
       next(err)

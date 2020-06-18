@@ -7,10 +7,8 @@ import {
 
 
 class KeepsService {
-  async getAll(userEmail) {
-    return await dbContext.Keeps.find({
-      creatorEmail: userEmail
-    }).populate("creator", "name picture")
+  async getAll() {
+    return await dbContext.Keeps.find().populate("creator", "name picture")
     // .populate("organization", "name")
   }
 

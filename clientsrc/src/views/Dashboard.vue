@@ -39,9 +39,9 @@
 
     <div class="row justify-content-center">
       <div class="col-md-3 border rounded m-3" v-for="keep in keeps" :key="keep.id">
-        <h1>{{keep.name}}</h1>
-        <h1>{{keep.description}}</h1>
-        <img :src="keep.img" class="img-fluid" alt />
+        <h1>{{keep.Name}}</h1>
+        <h1>{{keep.Description}}</h1>
+        <img :src="keep.Img" class="img-fluid" alt />
         <div class="row m-2">
         <button @click="deleteKeep(keep.id)" class="btn btn-danger m-2">Delete</button>
         <div class="dropdown m-2">
