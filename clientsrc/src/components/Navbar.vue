@@ -26,7 +26,7 @@
           class="nav-item"
         >
           <router-link class="nav-link" :to="{ name: 'dashboard' }"
-            >Home</router-link
+            >Dashboard</router-link
           >
         </li>
         <li
