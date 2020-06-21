@@ -4,23 +4,23 @@
 
     <form @submit.prevent="createVault()">
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="Name">Name</label>
         <input
           type="text"
           name="name"
           class="form-control"
           placeholder="Enter vault name...."
-          v-model="newVault.name"
+          v-model="newVault.Name"
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
+        <label for="Description">Description</label>
         <input
           type="text"
           name="description"
           class="form-control"
           placeholder="Enter Description...."
-          v-model="newVault.description"
+          v-model="newVault.Description"
         />
       </div>
       <button type="submit" class="btn btn-primary btn-lg">SUBMIT</button>
@@ -31,15 +31,15 @@
         <div v-if="$auth.user.sub == vault.userId">
           <div class="col-12 border rounded m-3">
           <h1>vault:</h1>
-          <h1>{{vault.name}}</h1>
-          <h1>{{vault.description}}</h1>
+          <h1>{{vault.Name}}</h1>
+          <h1>{{vault.Description}}</h1>
           <hr />
           <div v-for="keep in Keeps" :key="keep.id">
             <div v-for="vk in VaultKeeps" :key="vk.id">
               <div v-if="keep.id == vk.keepId && vk.vaultId == vault.id">
-                <p>Name: {{keep.name}}</p>
-                <p>Description: {{keep.description}}</p>
-                <img :src="keep.img" class="img-fluid" alt />
+                <p>Name: {{keep.Name}}</p>
+                <p>Description: {{keep.Description}}</p>
+                <img :src="keep.Img" class="img-fluid" alt />
                 <button
                   @click="deleteVaultKeep(vk.id)"
                   class="btn btn-warning btn-block"
