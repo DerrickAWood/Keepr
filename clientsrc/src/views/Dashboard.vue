@@ -79,7 +79,7 @@ export default {
   },
   mounted() {
     this.$store.dispatch("getKeeps");
-    this.$store.dispatch("getVaults");
+     this.$store.dispatch("getVaults");
     this.$store.dispatch("setBearer", this.$auth.bearer);
     console.log(this.$auth.user.sub);
   },
