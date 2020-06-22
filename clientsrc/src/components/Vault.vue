@@ -41,7 +41,7 @@
                 <p>Description: {{keep.Description}}</p>
                 <img :src="keep.Img" class="img-fluid" alt />
                 <button
-                  @click="deleteVaultKeep(vk.id)"
+                  @click="deleteVaultKeep(vk._id)"
                   class="btn btn-warning btn-block"
                 >Delete Keep From Vault</button>
                 <hr />
