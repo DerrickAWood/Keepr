@@ -77,6 +77,7 @@ export default new Vuex.Store({
     },
     
     async addToVault({commit,dispatch}, newVaultKeep){
+      debugger
       let res = await api.post("vaultkeeps", newVaultKeep)
       dispatch("getVaults")
       dispatch("getKeeps")

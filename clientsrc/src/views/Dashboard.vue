@@ -100,7 +100,6 @@ export default {
     },
     // ANCHOR just got access to keepid, get 400, do i need userid?
     addToVault(vaultId, keepId, userId) {
-      debugger
       let newVaultKeep = {
         keepId: keepId,
         vaultId: vaultId,
