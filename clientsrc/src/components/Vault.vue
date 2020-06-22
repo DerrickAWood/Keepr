@@ -28,7 +28,7 @@
 
     <div class="row justify-content-center">
       <div class="m-2" v-for="vault in Vaults" :key="vault.id">
-        <div v-if="$auth.user.sub == vault.userId">
+        <div v-if="$auth.user.email == vault.creatorEmail">
           <div class="col-12 border rounded m-3">
           <h1>vault:</h1>
           <h1>{{vault.Name}}</h1>
@@ -84,6 +84,7 @@ export default {
     this.$store.dispatch("getVaults");
     this.$store.dispatch("getVaultKeeps");
     this.$store.dispatch("setBearer", this.$auth.bearer);
+      console.log(this.$auth.user.email)
   },
   computed: {
     Keeps() {
@@ -91,6 +92,7 @@ export default {
     },
     Vaults() {
       return this.$store.state.vaults;
+      console.log(this.$store.state.Vaults)
     },
     VaultKeeps() {
       return this.$store.state.vaultKeeps;
