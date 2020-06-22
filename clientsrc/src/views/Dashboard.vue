@@ -15,7 +15,7 @@
         />
       </div>
       <div class="form-group">
-        <label for="img">img</label>
+        <label for="img">img URL</label>
         <input
           type="text"
           name="img"
