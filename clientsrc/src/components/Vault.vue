@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-          <button @click="deleteVault(vault.id)" class="btn btn-danger">Delete Vault</button>
+          <button @click="deleteVault(vault._id)" class="btn btn-danger">Delete Vault</button>
           </div>
         </div>
       </div>
@@ -84,7 +84,6 @@ export default {
     this.$store.dispatch("getVaults");
     this.$store.dispatch("getVaultKeeps");
     this.$store.dispatch("setBearer", this.$auth.bearer);
-      console.log(this.$auth.user.email)
   },
   computed: {
     Keeps() {
