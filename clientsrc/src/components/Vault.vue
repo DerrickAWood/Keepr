@@ -36,7 +36,7 @@
           <hr />
           <div v-for="keep in Keeps" :key="keep.id">
             <div v-for="vk in VaultKeeps" :key="vk.id">
-              <div v-if="keep.id == vk.keepId && vk.vaultId == vault.id">
+              <div v-if="keep._id == vk.keepId && vk.vaultId == vault._id">
                 <p>Name: {{keep.Name}}</p>
                 <p>Description: {{keep.Description}}</p>
                 <img :src="keep.Img" class="img-fluid" alt />
