@@ -55,12 +55,12 @@
             >Add To Vault</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <button
-                @click.prevent="addToVault(vault.id, keep.id)"
+                @click.prevent="addToVault(vault._id, keep._id)"
                 class="dropdown-item btn btn-primary btn-sm"
                 v-for="vault in Vaults"
                 :key="vault.id"
               >
-                <div v-if="$auth.user.sub == vault.userId">{{vault.name}}</div>
+                <div v-if="$auth.user.email == vault.creatorEmail">{{vault.Name}}</div>
               </button>
             </div>
           </div>
@@ -100,10 +100,11 @@ export default {
     },
     // ANCHOR just got access to keepid, get 400, do i need userid?
     addToVault(vaultId, keepId, userId) {
+      debugger
       let newVaultKeep = {
         keepId: keepId,
         vaultId: vaultId,
-        userId: this.$auth.user.sub
+        userId: this.$auth.user.email
       };
       console.log(newVaultKeep);
       this.$store.dispatch("addToVault", newVaultKeep);
