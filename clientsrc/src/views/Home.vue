@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Welcome, Check out the dashboard and add some cool stuff to your vaults!</h1>
+    <h1>Welcome, Log in and Check out the dashboard and add some cool stuff to your vaults!</h1>
   </div>
 </template>
 
